@@ -1,4 +1,4 @@
-package com.dev.controller;
+package com.dev.util;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -70,8 +70,7 @@ public class DriveQuickstart {
         GoogleAuthorizationCodeFlow flow =
                 new GoogleAuthorizationCodeFlow.Builder(
                         HTTP_TRANSPORT, JSON_FACTORY, clientSecrets, SCOPES)
-                .setDataStoreFactory(DATA_STORE_FACTORY)
-                .setAccessType("offline")
+                .setAccessType("online")
                 .build();
         Credential credential = new AuthorizationCodeInstalledApp(
             flow, new LocalServerReceiver()).authorize("user");
